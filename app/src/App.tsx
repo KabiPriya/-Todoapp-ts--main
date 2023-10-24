@@ -17,11 +17,11 @@ function App() {
     };
     setTodos((prev) => [...prev, obj]);
   }
-  function handleDelete(id: Number) {
-    const filtered = todos.filter((t) => t.id != id);
-    console.log(filtered);
-    setTodos(filtered);
-  }
+  // function handleDelete(id: Number) {
+  //   const filtered = todos.filter((t) => t.id != id);
+  //   console.log(filtered);
+  //   setTodos(filtered);
+  // }
 
   function handleUpdate(id: Number) {
     const findindex = todos.findIndex((t) => t.id === id);
