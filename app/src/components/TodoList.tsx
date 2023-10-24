@@ -1,5 +1,7 @@
 import { ITodo } from "../types";
 import EditForm from "./EditTodo";
+import { useState } from 'react';
+
 interface ITodoList {
   todos: ITodo[];
   extraCss?: string;
@@ -15,6 +17,17 @@ const TodoList: React.FC<ITodoList> = ({
   handleUpdate,
   handleSaveClick,
 }) => {
+  const [completedTodos, setCompletedTodos] = useState(new Set<number>());
+
+  const toggleCompletion = (id: number) => {
+    if (completedTodos.has(id)) {
+      completedTodos.delete(id);
+    } else {
+      completedTodos.add(id);
+    }
+    setCompletedTodos(new Set(completedTodos));
+  };
+
   return (
     <div className={extraCss}>
       {todos.map((t) => (
@@ -25,8 +38,18 @@ const TodoList: React.FC<ITodoList> = ({
             </>
           ) : (
             <p>
-              <input type="checkbox" />
-              {t.text}
+              <input
+                type="checkbox"
+                checked={completedTodos.has(t.id)}
+                onChange={() => toggleCompletion(t.id)}
+              />
+              <span
+                style={{
+                  textDecoration: completedTodos.has(t.id) ? "line-through" : "none"
+                }}
+              >
+                {t.text}
+              </span>
               <button
                 className="deletebutton"
                 onClick={() => handleDelete(t.id)}
