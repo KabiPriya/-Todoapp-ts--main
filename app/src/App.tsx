@@ -32,16 +32,16 @@ function App() {
     };
     setTodos(updatedItems);
   }
-  function handleSaveClick(id: Number, text: string) {
-    const findindex = todos.findIndex((t) => t.id === id);
-    const updatedItems = [...todos];
-    updatedItems[findindex] = {
-      ...updatedItems[findindex],
-      text: text,
-      isEdit: false,
-    };
-    setTodos(updatedItems);
-  }
+  // function handleSaveClick(id: Number, text: string) {
+  //   const findindex = todos.findIndex((t) => t.id === id);
+  //   const updatedItems = [...todos];
+  //   updatedItems[findindex] = {
+  //     ...updatedItems[findindex],
+  //     text: text,
+  //     isEdit: false,
+  //   };
+  //   setTodos(updatedItems);
+  // }
   return (
     <div>
       <h1>MY TODO LIST</h1>
