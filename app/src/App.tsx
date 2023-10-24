@@ -23,15 +23,15 @@ function App() {
     setTodos(filtered);
   }
 
-  // function handleUpdate(id: Number) {
-  //   const findindex = todos.findIndex((t) => t.id === id);
-  //   const updatedItems = [...todos];
-  //   updatedItems[findindex] = {
-  //     ...updatedItems[findindex],
-  //     isEdit: true,
-  //   };
-  //   setTodos(updatedItems);
-  // }
+  function handleUpdate(id: Number) {
+    const findindex = todos.findIndex((t) => t.id === id);
+    const updatedItems = [...todos];
+    updatedItems[findindex] = {
+      ...updatedItems[findindex],
+      isEdit: true,
+    };
+    setTodos(updatedItems);
+  }
   function handleSaveClick(id: Number, text: string) {
     const findindex = todos.findIndex((t) => t.id === id);
     const updatedItems = [...todos];
