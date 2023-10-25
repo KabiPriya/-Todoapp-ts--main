@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { ITodo } from "../types";
 
-interface ICard {
-  item: ITodo;
-  handleSaveClick: (num: Number, t: string) => void;
-}
+// interface ICard {
+//   item: ITodo;
+//   handleSaveClick: (num: Number, t: string) => void;
+// }
 const input: React.FC<ICard> = ({ handleSaveClick, item }) => {
   const [updatedTitle, setUpdatedTitle] = useState(item.text);
   return (
