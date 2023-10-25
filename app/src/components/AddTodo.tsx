@@ -4,16 +4,16 @@ interface IAddTodo {
   onTodoAdd: (str: string) => void;
 }
 
-// const AddTodo: React.FC<IAddTodo> = ({ onTodoAdd }) => {
-//   const [text, setText] = useState("");
+const AddTodo: React.FC<IAddTodo> = ({ onTodoAdd }) => {
+  const [text, setText] = useState("");
 
-//   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-//     e.preventDefault();
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
 
-//     onTodoAdd(text);
+    onTodoAdd(text);
 
-//     setText("");
-//   }
+    setText("");
+  }
 
   return (
     <form onSubmit={handleSubmit}>
