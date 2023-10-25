@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-// interface IAddTodo {
-//   onTodoAdd: (str: string) => void;
-// }
+interface IAddTodo {
+  onTodoAdd: (str: string) => void;
+}
 
 const AddTodo: React.FC<IAddTodo> = ({ onTodoAdd }) => {
   const [text, setText] = useState("");
