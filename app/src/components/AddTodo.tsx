@@ -16,15 +16,15 @@ const AddTodo: React.FC<IAddTodo> = ({ onTodoAdd }) => {
   }
 
   return (
-    // <form onSubmit={handleSubmit}>
-    //   <input
-    //     type="text"
-    //     value={text}
-    //     onChange={(e) => setText(e.target.value)}
-    //   />
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+      />
 
-    //   <button type="submit">ADD</button>
-    // </form>
+      <button type="submit">ADD</button>
+    </form>
   );
 };
 
